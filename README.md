@@ -20,10 +20,10 @@ Para que se possa executar o código, o usuário precisará instalar em sua máq
 
 Após a instalação de todas as bibliotecas contidas no item *requirements*, iremos instruir abaixo, as etapas que precisam ser confeccionadas antes de se rodar o algoritmo:
 
-1. Criar uma pasta chamada *data*
-2. Dentro desta pasta, crie um outra chamada *videos*
-3. Dentro da pasta *videos* insirá todos os vídeos de teste das partidas de futebol disponibilizados
-4. Após isso, abra o arquivo *Reproducer.py*, e passe o caminho de onde o vídeo que você que testar está localizado, dentro da  variável `VIDEO_PATH`. 
+1. Criar uma pasta chamada `data`
+2. Dentro desta pasta, crie um outra chamada `videos
+3. Dentro da pasta `videos` insirá todos os vídeos de teste das partidas de futebol disponibilizados
+4. Após isso, abra o arquivo `Reproducer.py` e passe o caminho de onde o vídeo que você que testar está localizado, dentro da  variável `VIDEO_PATH`. 
 
 Exemplo: `VIDEO_PATH = "data/videos/video3.mp4"`
 
@@ -38,5 +38,17 @@ No inicio da montagem do código percebemos que não havia um bom método para c
 Na criação do código partimos para uma estratégia que apelidamos de "analise do quadro inicial" basicamente consiste na obtenção do que seria um jogador do time 01, 02 e arbitro, para que esses dados fossem utilizados para caracterizar todas aas pessoas que fossem detectadas ao longo dos frames extraídos. Então utilizamos o Yolov3 para identificar pessoas no campo, depois pegamos a pessoa mais a esquerda do frame e chamamos de jogador do time 1, a mais a direita é chamada jogador do time 2, e o mais próximo da linha horizontal do frame que não parece com nenhum dos jogadores é caracterizada como arbitro, com isso, conseguimos obter as imagens básicas para caracterizar qualquer pessoa identificada. 
 
 Após isso utilizamos um tracker de centroide no qual relacionamos o id do centroide com a comparação de sua vestimenta e assim o id do centroide carrega o grupo a qual ele pertence.
+
+### **4) PROBLEMA**:
+
+Além dos problemas de detecção, que pode gerar erros na determinação do arbitro e dos jogadores dos times, a imprecisão da comparação também gera erros bem significativos, mas o grande problema do/da solução foi o desempenho, a rede siamese consome muito desempenho pois precisa comparar pessoas demais e por conta disso o programa e por esse motivo é impossível rodar a detecção e tracking em tempo real.
+
+### REFERÊNCIAS BIBLIOGRÁFICAS:
+https://pjreddie.com/darknet/yolo/
+
+https://www.pyimagesearch.com/2020/12/07/comparing-images-for-similarity-using-siamese-networks-keras-and-tensorflow/
+
+https://www.pyimagesearch.com/2018/07/23/simple-object-tracking-with-opencv/
+
 
 

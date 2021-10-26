@@ -4,7 +4,7 @@ Para que se possa executar o código, o usuário precisará instalar em sua máq
 
 ### **1) REQUIREMENTS**:
 
-* pip install python
+* pip install python = 3.9.7
 
 * pip install tensorflow
 

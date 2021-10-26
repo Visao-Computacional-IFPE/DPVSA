@@ -16,6 +16,8 @@ Para que se possa executar o código, o usuário precisará instalar em sua máq
 
 **OBS**: Com a instalação das bibliotecas, automaticamente irá instalar a sua versão mais recente, no qual foi utilizada para desenvolver a nossa solução.
 
+**OBS**: Realize o donwload do arquivo contido no link: https://pjreddie.com/media/files/yolov3-spp.weights e coloque no caminho `Yolov3/YL/`
+
 ### **2) EXECUÇÃO DO ALGORITMO**:
 
 Após a instalação de todas as bibliotecas contidas no item *requirements*, iremos instruir abaixo, as etapas que precisam ser confeccionadas antes de se rodar o algoritmo:
